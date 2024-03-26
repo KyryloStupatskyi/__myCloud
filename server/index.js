@@ -1,5 +1,7 @@
+require('dotenv').config()
 const express = require("express")
 const cors = require("cors")
+const sequelize = require("./db")
 
 const PORT = process.env.PORT || 5000
 
@@ -10,6 +12,8 @@ app.use(express.json())
 
 const start = async () => {
   try {
+    sequelize.authenticate()
+    sequelize.sync()
     app.listen(PORT, () => console.log(`Server is working at PORT ${PORT}`))
   } catch (error) {
     console.log(error)
