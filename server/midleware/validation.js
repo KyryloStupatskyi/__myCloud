@@ -10,8 +10,8 @@ class Validation {
 
   checkLoginRoute() {
     return [
-      body("email").isEmpty().withMessage("email field can not be empty"),
-      body("password").isEmpty().withMessage("password field can not be empty")
+      body("email").notEmpty().withMessage("email field can not be empty"),
+      body("password").notEmpty().withMessage("password field can not be empty")
     ]
   }
 }

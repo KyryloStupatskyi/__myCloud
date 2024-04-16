@@ -40,10 +40,11 @@ class AuthController {
     return res.json({ token })
   }
 
-  async login() {
+  async login(req, res) {
     const errors = validationResult(req)
 
     if (!errors.isEmpty()) {
+      console.log(errors)
       return res.status(400).json({ message: "Uncorected request: " + errors.errors[0].msg });
     }
 
@@ -66,8 +67,9 @@ class AuthController {
     return res.json({ token })
   }
 
-  async auth() {
-
+  async auth(req, res) {
+    const token = jwt.sign({ id: req.user.id, email: req.user.email, diskSpace: req.user.diskSpace, usedSpace: req.user.usedSpace }, process.env.JWT_KEY, { expiresIn: '24h' })
+    return res.json({ token })
   }
 }
 
