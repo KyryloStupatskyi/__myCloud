@@ -25,7 +25,7 @@ const ChildFiles = sequelize.define('childFile', {
 User.hasMany(File)
 File.belongsTo(User)
 
-File.hasMany(ChildFiles)
+File.hasMany(ChildFiles, { as: "parentId", foreignKey: "parentId" })
 ChildFiles.belongsTo(File)
 
 File.hasMany(File, { as: "parentFileId", foreignKey: "parentId" })
