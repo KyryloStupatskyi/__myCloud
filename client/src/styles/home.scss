@@ -63,6 +63,7 @@
 
 .auth {
   display: flex;
+  gap: 10px;
 }
 
 .btn {
@@ -94,10 +95,10 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 40vh;
+  margin-top: calc(40vh - 25px);
 }
 
-.txt {
+.title {
   letter-spacing: 1.22px !important;
   color: #fff;
 }
@@ -109,5 +110,6 @@
   background-color: rgba(#fff, 0.1) !important;
   letter-spacing: 0.1em !important;
   width: 250px !important;
-  height: 60px !important ;
+  height: 60px !important;
+  margin-top: 20px !important;
 }

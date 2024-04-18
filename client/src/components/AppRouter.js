@@ -15,7 +15,7 @@ const AppRouter = () => {
       )}
 
       {/*  Redirect Route  */}
-      {/* <Route path="*" element={<Navigate to="/home" replace />} /> */}
+      <Route path="*" element={<Navigate to="/home" replace />} />
     </Routes>
   )
 }
